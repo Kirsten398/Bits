@@ -49,6 +49,5 @@ public class snapping : MonoBehaviour {
         {
             setSignal(true, false);
         }
-
     }
 }

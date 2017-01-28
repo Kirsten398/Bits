@@ -15,8 +15,8 @@ public class runButtonOne : MonoBehaviour {
     public Material blueMat;
     public Material redMat;
 
-    private bool redSignal = false;
-    private bool blueSignal = false;
+    public bool redSignal = false;
+    public bool blueSignal = false;
     private GameObject done;
     private GameObject congrats;
     private GameObject oops;
@@ -67,6 +67,10 @@ public class runButtonOne : MonoBehaviour {
 
     public void RunProgram()
     {
+        Debug.Log("Program Staato");
+
+        Debug.Log(blueSignal + ", " + redSignal);
+
         if (blueSignal)
         {
             foreach (GameObject l in lasers)
@@ -111,7 +115,6 @@ public class runButtonOne : MonoBehaviour {
                 oops.GetComponent<Text>().enabled = true;
                 replay.gameObject.SetActive(true);
             }
-
         }
     }
 
@@ -122,7 +125,7 @@ public class runButtonOne : MonoBehaviour {
 
     void OnTriggerEnter(Collider bit)
     {
-        if(bit.tag == "yes")
+        if (bit.tag == "yes")
         {
             redSignal = false;
             blueSignal = true;

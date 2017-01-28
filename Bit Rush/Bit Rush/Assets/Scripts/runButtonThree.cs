@@ -15,7 +15,6 @@ public class runButtonThree : MonoBehaviour {
     public GameObject laser;
     public Material blueMat;
     public Material redMat;
-    public snapping snap;
 
     private bool redSignal1 = false;
     private bool redSignal2 = false;
@@ -84,15 +83,10 @@ public class runButtonThree : MonoBehaviour {
 
     public void RunProgram()
     {
-        Debug.Log("Program Staato!");
-
-        blueSignal1 = starts[0].GetComponent<snapping>().getBlueSignal();
-        redSignal1 = starts[0].GetComponent<snapping>().getRedSignal();
-        blueSignal2 = starts[1].GetComponent<snapping>().getBlueSignal();
-        redSignal2 = starts[1].GetComponent<snapping>().getRedSignal();
-
-        Debug.Log(blueSignal1 + ", " + blueSignal2 + ", " + redSignal1 + ", " + redSignal2);
-
+        blueSignal1 = starts[0].GetComponentInChildren<snapping>().getBlueSignal();
+        redSignal1 = starts[0].GetComponentInChildren<snapping>().getRedSignal();
+        blueSignal2 = starts[1].GetComponentInChildren<snapping>().getBlueSignal();
+        redSignal2 = starts[1].GetComponentInChildren<snapping>().getRedSignal();
 
         if (blueSignal1 && redSignal2)
         {
